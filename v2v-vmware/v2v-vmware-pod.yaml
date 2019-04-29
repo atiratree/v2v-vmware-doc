@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: v2v-vmware
+spec:
+  serviceAccountName: v2v-vmware
+  containers:
+    - name: v2v-vmware
+      image: 'quay.io/nyoxi/kubevirt-vmware:1.12.1-1'
+      imagePullPolicy: Always
+      command:
+        - kubevirt-vmware
+      env:
+        - name: WATCH_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        - name: OPERATOR_NAME
+          value: v2v-vmware

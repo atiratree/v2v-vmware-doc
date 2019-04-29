@@ -1,0 +1,43 @@
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachine
+metadata:
+  labels:
+    app: vm
+  name: vm
+spec:
+  running: false
+  template:
+    spec:
+      domain:
+        cpu:
+          cores: 1
+          sockets: 1
+          threads: 1
+        devices:
+          disks:
+            - bootOrder: 1
+              disk:
+                bus: virtio
+              name: a
+            - disk:
+                bus: virtio
+              name: b
+          interfaces:
+            - macAddress: '00:50:56:9f:8c:1f'
+              masquerade: {}
+              name: Network adapter 1
+          rng: {}
+        resources:
+          requests:
+            memory: 2G
+      networks:
+        - name: Network adapter 1
+          pod: {}
+      terminationGracePeriodSeconds: 0
+      volumes:
+        - name: a
+          persistentVolumeClaim:
+            claimName: a-h8ht5
+        - name: b
+          persistentVolumeClaim:
+            claimName: b-wsjnk
