@@ -17,7 +17,7 @@ creating v2v-vmware pod and getting vm data can be done with:
 VCENTER_HOSTNAME="aG9zdG5hbWUuY29t" \
 VCENTER_USERNAME="YWRtaW5pc3RyYXRvckB2c3BoZXJlLmxvY2Fs" \
 VCENTER_PASSWORD="cGFzc3dvcmQ=" \
-VM_NAME="vm-to-import=" ./create.sh
+VM_NAME="vm-to-import=" ./get-import-vm-data.sh
 ```
 
 
