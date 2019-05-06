@@ -25,7 +25,7 @@ VM_NAME="vm-to-import=" ./get-import-vm-data.sh
 
 1. download `VMware-vix-disklib`
 2. create empty PVC called `vddk-pvc` in the same namespace the conversion will occur (automated by script)
-3. extract data from `VMware-vix-disklib` archive to `vmware-vix-disklib-distrib` directory inside the Pod
+3. extract data from `VMware-vix-disklib` archive into the PVC which will be mounted at `/opt/vmware-vix-disklib-distrib` inside the Pod
 4. create conversion data (all the values are vanilla (no Base64))
 
 ```bash
