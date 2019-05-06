@@ -21,7 +21,7 @@ VM_NAME="vm-to-import=" ./get-import-vm-data.sh
 ```
 
 
-# Step 4: Create conversion Pod prerequisites
+# Step 3: Create conversion Pod prerequisites
 
 1. download `VMware-vix-disklib`
 2. create empty PVC called `vddk-pvc` in the same namespace the conversion will occur (automated by script)
